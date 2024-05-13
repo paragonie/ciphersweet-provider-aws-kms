@@ -1,6 +1,16 @@
 {
   "name": "paragonie/ciphersweet-provider-aws-kms",
   "description": "CipherSweet key provider backed by AWS KMS",
+  "keywords": [
+    "CipherSweet",
+    "encrypted databases",
+    "database encryption",
+    "AWS KMS",
+    "key provider",
+    "KMS",
+    "key management service"
+  ],
+  "license": "ISC",
   "autoload": {
     "psr-4": {
       "ParagonIE\\CipherSweet\\KeyProvider\\": "src"
