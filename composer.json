@@ -1,0 +1,27 @@
+{
+  "name": "paragonie/ciphersweet-provider-aws-kms",
+  "description": "CipherSweet key provider backed by AWS KMS",
+  "autoload": {
+    "psr-4": {
+      "ParagonIE\\CipherSweet\\KeyProvider\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "ParagonIE\\CipherSweet\\KeyProvider\\Tests\\": "tests"
+    }
+  },
+  "require": {
+    "php": "^8.1",
+    "aws/aws-sdk-php": "^3",
+    "paragonie/certainty": "^2.9",
+    "paragonie/ciphersweet": "^4.7",
+    "psr/simple-cache": "^3"
+  },
+  "require-dev": {
+    "ext-pdo_sqlite": "*",
+    "paragonie/easydb": "^3",
+    "phpunit/phpunit": "^9",
+    "vimeo/psalm": "^4"
+  }
+}
