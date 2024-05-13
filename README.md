@@ -1,5 +1,11 @@
 # AWS KMS KeyProvider for CipherSweet (PHP)
 
+[![Static Analysis](https://github.com/paragonie/ciphersweet-provider-aws-kms/actions/workflows/psalm.yml/badge.svg)](https://github.com/paragonie/ciphersweet-provider-aws-kms/actions)
+[![Latest Stable Version](https://poser.pugx.org/paragonie/ciphersweet-provider-aws-kms/v/stable)](https://packagist.org/packages/paragonie/ciphersweet-provider-aws-kms)
+[![Latest Unstable Version](https://poser.pugx.org/paragonie/ciphersweet-provider-aws-kms/v/unstable)](https://packagist.org/packages/paragonie/ciphersweet-provider-aws-kms)
+[![License](https://poser.pugx.org/paragonie/ciphersweet-provider-aws-kms/license)](https://packagist.org/packages/paragonie/ciphersweet-provider-aws-kms)
+[![Downloads](https://img.shields.io/packagist/dt/paragonie/ciphersweet-provider-aws-kms.svg)](https://packagist.org/packages/paragonie/ciphersweet-provider-aws-kms)
+
 This repository exists to provide a distinct Composer package useful for 
 integrating [CipherSweet](https://github.com/paragonie/ciphersweet) with AWS KMS.
 
