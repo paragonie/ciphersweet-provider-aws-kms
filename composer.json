@@ -25,7 +25,7 @@
     "php": "^8.1",
     "aws/aws-sdk-php": "^3",
     "paragonie/certainty": "^2.9",
-    "paragonie/ciphersweet": "^4.7",
+    "paragonie/ciphersweet": "^4.8",
     "psr/simple-cache": "^3"
   },
   "require-dev": {

@@ -6,12 +6,15 @@ use Aws\Kms\KmsClient;
 use ParagonIE\CipherSweet\Backend\BoringCrypto;
 use ParagonIE\CipherSweet\Backend\Key\SymmetricKey;
 use ParagonIE\CipherSweet\Contract\BackendInterface;
+use ParagonIE\CipherSweet\Contract\StaticBlindIndexKeyProviderInterface;
 use ParagonIE\CipherSweet\Exception\CipherSweetException;
 use Psr\SimpleCache\CacheInterface;
 
-class MultiTenantKmsKeyProvider extends MultiTenantProvider
+class MultiTenantKmsKeyProvider extends MultiTenantProvider implements StaticBlindIndexKeyProviderInterface
 {
     protected ?BackendInterface $backend = null;
+
+    protected string|int|null $blindIndexTenant = null;
 
     /** @var array<string, string> $tenantColumnMap */
     protected array $tenantColumnMap = [];
@@ -189,5 +192,15 @@ class MultiTenantKmsKeyProvider extends MultiTenantProvider
     {
         $this->tenantColumnMap[$tableName] = $tenantColumnName;
         return $this;
+    }
+
+    public function getStaticBlindIndexTenant(): string|int|null
+    {
+        return $this->blindIndexTenant;
+    }
+
+    public function setStaticBlindIndexTenant(int|string|null $tenant = null): void
+    {
+        $this->blindIndexTenant = $tenant;
     }
 }
