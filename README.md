@@ -138,6 +138,20 @@ $encryptManyRows = (new EncryptedMultiRows($engine))->setAutoBindContext(true);
 
 And then you can [just use CipherSweet as usual](https://ciphersweet.paragonie.com/php/usage).
 
+#### Using a Static Key for Blind Indexing with Multi-Tenancy
+
+You can toggle this on with a single call to multi-tenant key provider.
+
+```php
+$multiPro->setStaticBlindIndexTenant("dedicated-searching-tenant-id-goes-here");
+```
+
+To toggle this feature back off, pass `null` instead:
+
+```php
+$multiPro->setStaticBlindIndexTenant(null);
+```
+
 ### Caching
 
 Network round-trips to AWS KMS can be a performance bottleneck for your application, especially
