@@ -50,6 +50,24 @@ class MultiTenantKmsKeyProviderTest extends TestCase
         return new MultiTenantKmsKeyProvider([], null, $backend);
     }
 
+    public function testConstructorAcceptsProviderWithMatchingBackend(): void
+    {
+        $backend = new BoringCrypto();
+        $provider = new KmsKeyProvider(
+            $this->createMock(KmsClient::class),
+            $backend,
+            'test-key'
+        );
+
+        $multi = new MultiTenantKmsKeyProvider(
+            ['tenant' => $provider],
+            null,
+            $backend
+        );
+
+        $this->assertSame($provider, $multi->getTenant('tenant'));
+    }
+
     public function keyProvider(): array
     {
         return [
