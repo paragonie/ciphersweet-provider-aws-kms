@@ -40,7 +40,7 @@ class MultiTenantKmsKeyProvider extends MultiTenantProvider implements StaticBli
             if (!($keyProvider instanceof KmsKeyProvider)) {
                 throw new \TypeError('Key Provider is not a KMS key provider: ' . $name);
             }
-            if ($keyProvider->getBackend() instanceof $backend) {
+            if (!($keyProvider->getBackend() instanceof $backend)) {
                 throw new \TypeError('KeyProvider has the wrong backend:' . $name);
             }
         }
